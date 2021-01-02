@@ -1,0 +1,305 @@
+@font-face {
+	font-family: BrandonGrotesque;
+	src: url(../fonts/Brandon/Brandon_med.otf);
+}
+@font-face {
+	font-family: DMSerifDisplay;
+	src: url(../fonts/DMSerifDisplay/DMSerifDisplay-Regular.ttf);
+}
+body {
+	/* max-width: 1440px; */
+	width: 100%;
+	margin: auto;
+	font-family: BrandonGrotesque;
+	color: #1d1d1b;
+}
+
+/* Common class */
+.container{	
+	position: relative;
+	padding: 0 32px;
+}
+.w-100{
+	width: 100%;
+}
+.d-flex{
+	display: flex;
+}
+/* End common class */
+
+/* Hero section */
+.hero{
+	background-image: url(../images/header.png);
+	background-size: cover;
+	height: calc(100vw / 2.38474870017);
+}
+.hero-content{
+	padding-top: 4%;
+	padding-left: 17%;
+}
+.hero-title h2{
+  font-family: DMSerifDisplay;
+  font-size: 48px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  color: #38408f;
+  margin: 0;
+}
+.hero-first{
+	margin-top: 24px;
+	margin-bottom: 16px;
+}
+.hero-first p{
+	font-size: 16px;
+	font-weight: bold;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: 1.13;
+	letter-spacing: normal;
+	color: #1d1d1b;
+	margin: 0;
+}
+.hero-second p{
+	font-size: 12px;
+	font-weight: normal;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: 1.67;
+	letter-spacing: normal;
+	color: #1d1d1b;
+	margin: 0;
+}
+.mobile-hero{
+	display: none;
+}
+.mobile-hero-title{
+	font-family: DMSerifDisplay;
+	font-size: 48px;
+	font-weight: normal;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: 1;
+	letter-spacing: normal;
+	color: #38408f;
+	margin: 0;
+}
+.mobile-hero-first{
+	font-size: 16px;
+	font-weight: bold;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: 1.13;
+	letter-spacing: normal;
+	color: #1d1d1b;
+	margin-top: 24px;
+	margin-bottom: 16px;
+}
+.mobile-hero-second{
+	font-size: 12px;
+	font-weight: normal;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: 1.67;
+	letter-spacing: normal;
+	color: #1d1d1b;
+	margin: 0;
+}
+.mobile-hero-content{
+	text-align: center;
+	width: 80%;
+	margin: auto;
+	margin-top: 20px;
+	margin-bottom: 40px;
+}
+.mobile-hero-img{
+	width: 100%;
+}
+.mobile-hero-img img{
+	width: 100%;
+}
+/* End hero section */
+
+/* Ingredient section */
+.ingredient{
+	width: 55%;
+	margin: auto;
+	min-width: 675px;
+	margin-top: 70px;
+	margin-bottom: 98px;
+}
+.ingredient-section-group .ingredient-section:not(:last-child){
+	margin-bottom: 108px;
+}
+.ingredient .ingredient-section:last-child{
+	margin-bottom: 80px;
+}
+.ingredient-title{
+	display: flex;
+}
+.ingredient-title hr{
+	width: 45%;
+	border-top: 1px solid rgba(151, 151, 151, 0.16);
+	border-right: 0;
+	border-left: 0;
+	border-bottom-style: none;
+	margin: auto;
+}
+.ingredient-title hr:first-of-type{
+	margin-left: 0;
+}
+.ingredient-title hr:last-of-type{
+	margin-right: 0;
+}
+.ingredient-letter{
+	width: 40px;
+    height: 40px;
+    background-color: #eeeeee;
+	font-size: 16px;
+	font-weight: bold;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: normal;
+	letter-spacing: normal;
+	text-align: center;
+	color: #1d1d1b;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.ingredient-item-group{
+	display: flex;
+	justify-content: space-between;
+	margin-top: 40px;
+}
+.ingredient-circle{
+	width: 146px;
+    height: 146px;
+    background-color: #eeeeee;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.ingredient-circle img{
+	width: 106px;
+}
+.ingredient-item-name{
+	text-align: center;
+	margin-top: 16px;
+	margin-bottom: 0;
+}
+.ingredient-comment p{
+	font-family: DMSerifDisplay;
+	font-size: 24px;
+	font-weight: normal;
+	font-stretch: normal;
+	font-style: italic;
+	line-height: 1.42;
+	letter-spacing: normal;
+	text-align: center;
+	color: #1d1d1b;
+	margin: 0;
+}
+.ingredient-mobile-group{
+	display: flex;
+	width: 50%;
+    justify-content: space-around;
+}
+/* End ingredient section */
+
+/* Label group section */
+.label-container{
+	background-color: #38408f;
+	padding-top: 118px;
+	padding-bottom: 100px;
+	width: 100%;
+	margin-bottom: 96px;
+	position: relative;
+}
+.label-group{
+	display: flex;
+    width: 58%;
+    margin: auto;
+    justify-content: space-between;
+    min-width: 800px;
+}
+.label-item p{
+	margin: 0;
+	text-align: center;
+	font-size: 10px;
+	font-weight: bold;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: 1.1;
+	letter-spacing: normal;
+	text-align: center;
+	color: #ffffff;
+	text-transform: uppercase;
+}
+.label-person-img{
+	position: absolute;
+	left: 50%;
+	-ms-transform: translateX(-50%);
+	transform: translateX(-50%);
+	top: -64px;
+}
+.label-item-group{
+	display: flex;
+	width: 50%;
+	justify-content: space-around;
+}
+.label-img img{
+	width: 80px;
+	height: 80px;
+}
+/* End label group section */
+@media only screen and (max-width: 1200px){
+	.hero-content{
+		padding-top: 1%;
+		padding-left: 17%;
+	}	
+}
+@media only screen and (max-width: 1078px){
+	.hero-content{
+		padding-top: 0;
+		padding-left: 17%;
+	}	
+}
+@media only screen and (max-width: 992px){
+	.hero{
+		display: none;
+	}
+	.mobile-hero{
+		display: block;
+	}
+	.ingredient-item-group{
+		display: block;
+	}
+	.ingredient-mobile-group{
+		width: 100%;
+		margin-bottom: 20px;
+	}
+	.mobile-ingredient-circle{
+		margin: auto;
+	}
+	.ingredient{
+		min-width: unset;
+		width: 100%;
+	}
+	.label-group{
+		min-width: unset;
+		width: 80%;
+		display: block;
+	}
+	.label-item-group{
+		margin: auto;
+		width: 100%;
+	}
+	.label-group .label-item-group:first-child{
+		margin-bottom: 40px;
+	}
+}

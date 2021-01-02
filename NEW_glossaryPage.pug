@@ -1,0 +1,112 @@
+mixin products-slider($articles, $sliderId)
+  .products-slider(id="#{sliderId}")
+    - foreach($articles as $article)
+      .product-card
+        .product-image
+          img(src="#{$article.imgSrc}")
+        .macaron
+          .int #{$article.price} €
+        .product-info
+          .product-type #{$article["product-type"]}
+          .product-name #{$article["product-name"]}
+
+mixin happy-users
+  .happy-users
+    block slides
+      - $happyUsers = [["img" => "/images/homePage/Avis-Monsieur-Barbier-1.jpg", "text" => "Au début, j'ai testé le site pour ses prix imbattables, puis je suis resté pour la qualité des lames, et la souplesse des formules, et je le recommande pour la gentillesse de l’équipe !", "city" => "Seignosse", "name" => "David S."],["img" => "/images/homePage/Avis-Monsieur-Barbier-2.jpg", "text" => "Dix années que je partage la vie de mon homme, et avec votre coffret, vous m'avez permis de lui offrir LE cadeau original, on aurait dit un gamin à qui on offre sa première petite voiture !", "city" => "Paris", "name" => "Eleonore"],["img" => "/images/homePage/Avis-Monsieur-Barbier-3.jpg", "text" => "Chez Peppino, nous sommes barbiers de père en fils, et vos produits sont dignes des plus grandes marques professionnelles, toutes nos félicitations !", "city" => "Rome", "name" => "Pietro C."]]
+      - foreach($happyUsers as $happyUser) 
+        .happy-user
+          img(src="#{$happyUser.img}")
+          .text #{$happyUser.text}
+          .name #{$happyUser.name}
+          .city.grey-subtitle #{$happyUser.city}
+
+extends layouts/NEW_layout.pug
+
+append styles
+  link(rel="stylesheet", href="/css/new-glossary")
+
+block append scripts
+  script(src="https://hammerjs.github.io/dist/hammer.js")
+  script(src="/js/homePage.js")
+
+
+block content
+  - $goldenTicketData = ["movieTitle" => "Docteur ?", "releaseDate" => "11 Septembre 2019"]
+  - $ArticlesData = ["shaving" => [["product-name" => "better-shave 175ml", "product-type" => "Crème de rasage","price" => 9.99,"imgSrc" => "/images/newSite/products/coffret/rituel/Monsieur-Barbier-Coffret-Cadeau-Rasage-Rituel-Barbier-Produits-XL.png"],["product-name" => "better-shave 175ml", "product-type" => "Crème de rasage","price" => 9.99,"imgSrc" => "/images/newSite/products/coffret/rituel/Monsieur-Barbier-Coffret-Cadeau-Rasage-Rituel-Barbier-Produits-XL.png"],["product-name" => "better-shave 175ml", "product-type" => "Crème de rasage","price" => 9.99,"imgSrc" => "/images/newSite/products/coffret/rituel/Monsieur-Barbier-Coffret-Cadeau-Rasage-Rituel-Barbier-Produits-XL.png"]],"skin" => [["product-name" => "better-shave 175ml", "product-type" => "Crème de rasage","price" => 9.99,"imgSrc" => "/images/newSite/products/coffret/rituel/Monsieur-Barbier-Coffret-Cadeau-Rasage-Rituel-Barbier-Produits-XL.png"],["product-name" => "better-shave 175ml", "product-type" => "Crème de rasage","price" => 9.99,"imgSrc" => "/images/newSite/products/coffret/rituel/Monsieur-Barbier-Coffret-Cadeau-Rasage-Rituel-Barbier-Produits-XL.png"],["product-name" => "better-shave 175ml", "product-type" => "Crème de rasage","price" => 9.99,"imgSrc" => "/images/newSite/products/coffret/rituel/Monsieur-Barbier-Coffret-Cadeau-Rasage-Rituel-Barbier-Produits-XL.png"]],"beard" => [["product-name" => "better-shave 175ml", "product-type" => "Crème de rasage","price" => 9.99,"imgSrc" => "/images/newSite/products/coffret/rituel/Monsieur-Barbier-Coffret-Cadeau-Rasage-Rituel-Barbier-Produits-XL.png"],["product-name" => "better-shave 175ml", "product-type" => "Crème de rasage","price" => 9.99,"imgSrc" => "/images/newSite/products/coffret/rituel/Monsieur-Barbier-Coffret-Cadeau-Rasage-Rituel-Barbier-Produits-XL.png"],["product-name" => "better-shave 175ml", "product-type" => "Crème de rasage","price" => 9.99,"imgSrc" => "/images/newSite/products/coffret/rituel/Monsieur-Barbier-Coffret-Cadeau-Rasage-Rituel-Barbier-Produits-XL.png"]]]
+  .container
+    .hero
+      .hero-content
+        .hero-title
+          h2 La recette
+          h2 secrète du
+          h2 grooming
+          h2 parfait.
+        .hero-first
+          p Ingrédients cosmétiques pour tous
+          p vos produits sains et naturels.
+        .hero-second
+          p Retrouvez dans ce glossaire des
+          p informations sur les ingrédients entrant
+          p dans la composition des produits
+          p Monsieur Barbier.
+    .mobile-hero
+      .mobile-hero-content
+        h2.mobile-hero-title La recette secrète du grooming parfait.
+        p.mobile-hero-first Ingrédients cosmétiques pour tous vos produits sains et naturels.
+        p.mobile-hero-second Retrouvez dans ce glossaire des informations sur les ingrédients entrant dans la composition des produits Monsieur Barbier.
+      .mobile-hero-img
+        img(src="/images/newSite/ingredients/Monsieur-Barbier-Composition-Ingredients-INCI.png")
+
+    .ingredient
+      .ingredient-section-group
+        - $initial = "";
+        - $initials = [];
+        each ingredient in ingredients
+          - $name = $ingredient['frenchName']
+          - $nameInitial = substr($name, 0,1)
+          - $urlName = $ingredient['urlName']
+          - $imageName = $ingredient['image']
+          if $initial !== $nameInitial
+            - $initial = $nameInitial
+            - $initials[] = $initial
+            .ingredient-section
+              div.ingredient-title
+                hr
+                .ingredient-letter= initial
+                hr
+                    
+          a(href="/ingredient-cosmetique/" + urlName)
+            .ingredient-item
+              .ingredient-circle
+                img(src="/images/newSite/ingredients/" + imageName)
+              p.ingredient-item-name= name
+      .ingredient-comment
+        p ‘‘ Le bien être au quotidien
+        p avec des ingrédients sains ! ’’
+    .label-container
+      .label-person-img
+        img(src="/images/newSite/mascotte/picto-illus-mrbarbier-bras-croises.svg", alt="")
+      .label-group
+        .label-item-group
+          .label-item
+            .label-img
+              img(src="/images/newSite/labels/natural-certifiate-1.png", alt="")
+            p Naturel
+            p &amp; Certifié
+          .label-item
+            .label-img
+              img(src="/images/newSite/labels/natural-certifiate-2.png", alt="")
+            p Naturel
+            p &amp; Certifié
+        .label-item-group
+          .label-item
+            .label-img
+              img(src="/images/newSite/labels/natural-certifiate-3.png", alt="")
+            p Naturel
+            p &amp; Certifié
+          .label-item
+            .label-img
+              img(src="/images/newSite/labels/natural-certifiate-4.png", alt="")
+            p Naturel
+            p &amp; Certifié
